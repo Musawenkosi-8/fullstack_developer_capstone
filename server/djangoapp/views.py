@@ -4,6 +4,7 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .restapis import get_request, post_review
+from .models import CarModel
 
 logger = logging.getLogger(__name__)
 
@@ -73,8 +74,14 @@ def add_review(request):
     })
 
 
-from .models import CarModel
-
 def get_cars(request):
     cars = CarModel.objects.select_related("car_make").all()
-    return JsonResponse({"CarModels": [{"CarMake": car.car_make.name, "CarModel": car.name} for car in cars]})
+    return JsonResponse({
+        "CarModels": [
+            {
+                "CarMake": car.car_make.name,
+                "CarModel": car.name,
+            }
+            for car in cars
+        ]
+    })
