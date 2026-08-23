@@ -14,7 +14,7 @@ const PostReview = () => {
   const [carmodels, setCarmodels] = useState([]);
 
   let curr_url = window.location.href;
-  let root_url = curr_url.substring(0,curr_url.indexOf("postreview"));
+  let root_url = "https://phiwayinkosi-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/";
   let params = useParams();
   let id =params.id;
   let dealer_url = root_url+`djangoapp/dealer/${id}`;
@@ -22,10 +22,10 @@ const PostReview = () => {
   let carmodels_url = root_url+`djangoapp/get_cars`;
 
   const postreview = async ()=>{
-    let name = sessionStorage.getItem("firstname")+" "+sessionStorage.getItem("lastname");
+    let name = sessionStorage.getItem("firstname")+" "+sessionStorage.getItem("lastname"); console.log("SESSION NAME VALUES:", sessionStorage.getItem("firstname"), sessionStorage.getItem("lastname"), sessionStorage.getItem("username"));
     //If the first and second name are stores as null, use the username
     if(name.includes("null")) {
-      name = sessionStorage.getItem("username");
+      name = sessionStorage.getItem("username") || "admin";
     }
     if(!model || review === "" || date === "" || year === "" || model === "") {
       alert("All details are mandatory")
@@ -57,6 +57,7 @@ const PostReview = () => {
   });
 
   const json = await res.json();
+  console.log("POST REVIEW STATUS:", json.status); console.log("POST REVIEW RESPONSE:", JSON.stringify(json));
   if (json.status === 200) {
       window.location.href = window.location.origin+"/dealer/"+id;
   }
@@ -69,9 +70,7 @@ const PostReview = () => {
     const retobj = await res.json();
     
     if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
-      if(dealerobjs.length > 0)
-        setDealer(dealerobjs[0])
+      setDealer(retobj.dealer)
     }
   }
 

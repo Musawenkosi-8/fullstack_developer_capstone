@@ -10,9 +10,9 @@ const Dealers = () => {
   let [states, setStates] = useState([])
 
   // let root_url = window.location.origin
-  let dealer_url ="/djangoapp/get_dealers";
+  let dealer_url ="https://phiwayinkosi-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/get_dealers";
   
-  let dealer_url_by_state = "/djangoapp/get_dealers/";
+  let dealer_url_by_state = "https://phiwayinkosi-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/get_dealers/";
  
   const filterDealers = async (state) => {
     dealer_url_by_state = dealer_url_by_state+state;
