@@ -1,0 +1,49 @@
+GitHub Actions CI/CD Workflow - Successful Run
+================================================
+
+
+✓ main Lint Code · 32648104955
+Triggered via push about 37 minutes ago
+
+✓ Lint Python Files in 9s (ID 97215395742)
+  ✓ Set up job
+  ✓ Checkout Repository
+  ✓ Set up Python
+  ✓ Install dependencies
+  ✓ Print working directory
+  ✓ Run Linter
+  ✓ Post Set up Python
+  ✓ Post Checkout Repository
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Lint Python Files: .github#2
+
+
+To see the full job log, try: gh run view --log --job=97215395742
+View this run on GitHub: https://github.com/Musawenkosi-8/fullstack_developer_capstone/actions/runs/32648104955
+
+================================================
+
+
+✓ main Lint Code · 32648104955
+Triggered via push about 37 minutes ago
+
+✓ Lint JavaScript Files in 12s (ID 97215395565)
+  ✓ Set up job
+  ✓ Checkout Repository
+  ✓ Install Node.js
+  ✓ Install JSHint
+  ✓ Run Linter
+  ✓ Post Install Node.js
+  ✓ Post Checkout Repository
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Lint JavaScript Files: .github#2
+
+
+To see the full job log, try: gh run view --log --job=97215395565
+View this run on GitHub: https://github.com/Musawenkosi-8/fullstack_developer_capstone/actions/runs/32648104955
